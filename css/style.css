@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css?family=Kelly+Slab");
+* {
+  box-sizing: border-box;
+}
+
+html {
+  position: relative;
+  height: 100%;
+}
+
+.container {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  width: 250px;
+  margin: auto;
+}
+
+.title {
+  margin-bottom: 15px;
+  font-size: 25px;
+  color: pink;
+  text-transform: uppercase;
+}
+
+.list {
+  position: relative;
+  width: 100%;
+  border: 5px solid pink;
+  background-color: white;
+}
+.list:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  bottom: -12px;
+  left: 5px;
+  right: -12px;
+  z-index: -1;
+}
+
+.item {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 5px solid pink;
+}
+.item:last-child {
+  border: none;
+}
+
+.item__checkbox {
+  position: relative;
+  width: 100%;
+  height: 50px;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked + .item__label .item__name:after, input[type="checkbox"]:hover + .item__label .item__name:after {
+  background-color: #ADD8E6;
+}
+input[type="checkbox"]:checked {
+  background-color: #ADD8E6;
+}
+input[type="checkbox"]:checked + .item__label .item__name:after {
+  content: 'Procrastinated';
+}
+
+.item__label {
+  position: absolute;
+  top: 0;
+  left: 45px;
+  bottom: 0;
+  right: 0;
+  border-left: 5px solid;
+  padding: 0 17px;
+  background-color: white;
+  line-height: 48px;
+  color: pink;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version */
+}
+
+.item__name {
+  position: relative;
+  display: inline-block;
+}
+.item__name:after {
+  content: 'Work';
+  position: absolute;
+  top: 22.5px;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  line-height: 1px;
+}
